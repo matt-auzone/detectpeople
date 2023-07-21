@@ -1,0 +1,2 @@
+appconfig_0/mpk-coco-people.rtm filter=lfs diff=lfs merge=lfs -text
+appconfig_0/test_image.png filter=lfs diff=lfs merge=lfs -text
