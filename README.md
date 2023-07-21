@@ -1,5 +1,5 @@
-# Image Based General Detection
-This code example demonstrates how to run general detection using VAAL. The C code in detectimg.c contains the sample application that runs general detection and demonstrates how it can be modified to fit your needs. This repo contains information on how to run this application on Maivin using Torizon, directly using Docker on Maivin, on an EVK as well as on one's desktop.
+# Image Based People Detection
+This code example demonstrates how to run people detection using VAAL. The C code in detectpeople.c contains the sample application that runs people detection and demonstrates how it can be modified to fit your needs. This repo contains information on how to run this application on Maivin using Torizon, directly using Docker on Maivin, on an EVK as well as on one's desktop.
 
 ## VAAL Workflow
 When creating a VAAL Application, there are 3 stages involved, Initialization, Inference Loop, and Deallocation. The Inference Loop stage is composed of three main components, preprocessing, inference, and post-processing. We will examine each and provide a general overview and how to make modifications within those to tailor the application to one's parameters.
@@ -7,7 +7,7 @@ When creating a VAAL Application, there are 3 stages involved, Initialization, I
 ### Initialization Stage
 This stage of the VAAL Workflow handles the creation of a context, the loading of a model as well as setting any additional parameters that may be necessary.
 
-To create a context with a pre-determined model the following can be written as seen in detectimg.c lines 138-140
+To create a context with a pre-determined model the following can be written as seen in detectpeople.c lines 138-140
 ```
 VAALContext* ctx = vaal_context_create(engine);
 err = vaal_load_model_file(ctx, model);
@@ -108,9 +108,9 @@ To change what model or images are used with the general detection app, on the l
 2. Ensure make is install ```sudo apt-get update && sudo apt-get install make``
 3. In the base folder of this repo, run ```make```
 
-At this point the detectimg application will be built and can be run using the provided samples or using your own model and image.
+At this point the detectpeople application will be built and can be run using the provided samples or using your own model and image.
 ```
-./detectimg -e cpu appconfig_0/mpk-coco-people.rtm appconfig_0/test_image.png
+./detectpeople -e cpu appconfig_0/mpk-coco-people.rtm appconfig_0/test_image.png
 VisionPack 1.4.0 EVALUATION - Copyright 2022 Au-Zone Technologies
   [box] label            (scr%): xmin ymin xmax ymax  [    load    infer    boxes]
 appconfig_0/test_image.png                            [   43.19  1056.70     1.96]

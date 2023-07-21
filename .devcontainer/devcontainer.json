@@ -1,5 +1,5 @@
 {
-    "name": "torizon_detectimg",
+    "name": "torizon_detectpeople",
     "dockerFile": "Dockerfile",
     "extensions": [
         "ms-vscode.cpptools",

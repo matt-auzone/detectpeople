@@ -1,19 +1,19 @@
-OBJS := detectimg.o
+OBJS := detectpeople.o
 LIBS := -lvaal
 
 %.o : %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS) 
 
-detectimg: $(OBJS)
+detectpeople: $(OBJS)
 	dpkg -L libvaal
 	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 
-install: detectimg
+install: detectpeople
 	mkdir -p $(WORKDIR)
-	cp detectimg $(WORKDIR)/
+	cp detectpeople $(WORKDIR)/
 
 
 clean:
 	rm -f *.o
-	rm -f detectimg
+	rm -f detectpeople
