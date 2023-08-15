@@ -1,8 +1,4 @@
 {
     "torizon.configuration": "debug",
     "torizon.appfolder": "appconfig_0",
-    "files.associations": {
-        "getopt.h": "c",
-        "vaal.h": "c"
-    }
 }
